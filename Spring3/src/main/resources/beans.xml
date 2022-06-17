@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:context="http://www.springframework.org/schema/context"
+xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+
+
+<bean id="item1" class="com.zensar.Item" scope="prototype">
+	<property name="name" value="Laptop" />
+	<property name="price" value="50000.0" />
+</bean>
+<bean id="item2" class="com.zensar.Item" scope="prototype">
+	<property name="name" value="Desktop" />
+	<property name="price" value="20000.0" />
+</bean>
+
+<bean id="Order" class="com.zensar.Order" autowire="byName" >
+	<property name="title" value="Purchase Laptops" />
+</bean>
+
+
+
+</beans>
