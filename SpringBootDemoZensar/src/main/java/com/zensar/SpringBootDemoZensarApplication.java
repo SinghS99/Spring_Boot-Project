@@ -8,7 +8,7 @@ public class SpringBootDemoZensarApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootDemoZensarApplication.class, args);
-		System.out.println("Hello Spring Boot");
+		System.out.println("Hello Spring Boot,I am Working Fine");
 		
 	}
 

@@ -5,16 +5,39 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
-public class Department {
+import org.hibernate.validator.constraints.NotBlank;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Data 
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class Department {	
 @Id
 @GeneratedValue(strategy = GenerationType.AUTO)
 private long departmentId;
+//Hibernate Validation  On Api Below
+//@Length(max=5,min=1)
+//@Size(max=10,min=0)
+//@Email
+//@Positive
+//@Negative
+//@NegativeOrZero
+//@PositiveOrZero
+//@Future
+//@Past
+//@FutureOrPresent
+//@PastOrPresent
+
+@NotBlank(message="Please Add the Department name")
 private String departmentName;
 private String departmentAddress;
 private String departmentCode;
-
 public long getDepartmentId() {
 	return departmentId;
 }
@@ -37,22 +60,6 @@ public String getDepartmentCode() {
 	return departmentCode;
 }
 public void setDepartmentCode(String departmentCode) {
-	this.departmentCode = departmentCode;
-}
-@Override
-public String toString() {
-	return "Department [departmentId=" + departmentId + ", departmentName=" + departmentName + ", departmentAddress="
-			+ departmentAddress + ", departmentCode=" + departmentCode + "]";
-}
-public Department() {
-	super();
-	// TODO Auto-generated constructor stub
-}
-public Department(long departmentId, String departmentName, String departmentAddress, String departmentCode) {
-	super();
-	this.departmentId = departmentId;
-	this.departmentName = departmentName;
-	this.departmentAddress = departmentAddress;
 	this.departmentCode = departmentCode;
 }
 
